@@ -1,0 +1,25 @@
+.photo {
+    height: 500px;
+    width: 500px;
+  }
+
+.favIcon{
+    height: 30px;
+    width: 30px;
+    /* margin-top: 15px; */
+}
+#ClicksDiv{
+    display: grid;
+    grid-template-columns: 30px 20px 100px;
+    gap: 1px;
+}
+/* #mainDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 5px;
+
+} */
+.Modalsimg{
+    width:450px;
+    height: 400px;
+}
