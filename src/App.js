@@ -64,7 +64,7 @@ class App extends Component {
         
       }
     //  console.log(filterArr);
-    // console.log(this.state.filterDataList);
+     console.log(this.state.filterDataList);
     })
    
     })
