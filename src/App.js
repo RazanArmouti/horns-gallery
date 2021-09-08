@@ -4,8 +4,10 @@ import Header from './Components/Header';
 import Main from './Components/Main';
 import Footer from './Components/Footer';
 import SelectedBeast from './Components/SelectedBeast';
+import HornsFilter from './Components/HornsFilter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import dataList from './Components/data.json';
+
 
 
 class App extends Component {
@@ -17,46 +19,80 @@ class App extends Component {
       title: "",
       description: "",
       keyword: "",
-      horns: ""
+      horns: 0,
+      flag:false,
+      filterDataList:[]
+    
 
     }
 
   }
   handleClose = () => {
     this.setState({
-      showModal: false
+      showModal: false,
+    
     })
   }
 
-    handleOpen = (imageUrl, title,description,keyword,horns) => {
-      this.setState({
-        showModal: true,
-        imageUrl:imageUrl,
-        title:title,
-        description:description,
-        keyword:keyword,
-        horns:horns
+  handleOpen = (imageUrl, title, description, keyword, horns) => {
+    this.setState({
+      showModal: true,
+      imageUrl: imageUrl,
+      title: title,
+      description: description,
+      keyword: keyword,
+      horns: horns,
+     
 
-      })
-    }
-    render() {
-      return (
-        <>
-          <Header />
-          <Main dataList={dataList} handleOpen={this.handleOpen} />
-          <SelectedBeast handleClose={this.handleClose} 
-                         showModal={this.state.showModal} 
-                         imageUrl={this.state.imageUrl} 
-                         title={this.state.title} 
-                         description={this.state.description} 
-                         keyword={this.state.keyword} 
-                         horns={this.state.horns} />;
-          <Footer />
-        </>
-      )
-    }
-  
+
+    })
   }
+
+  handleChange = (e, value) => {
+    e.preventDefault();
+    this.setState({
+      horns: value,
+      flag:true,
+      filterDataList:dataList.filter(item => {
+       
+        for(let i=0; i<5;i++){
+       
+        if(parseInt(item.horns)===parseInt(value)){
+        
+          return item;
+        }
+        
+      }
+    //  console.log(filterArr);
+    // console.log(this.state.filterDataList);
+    })
+   
+    })
+   
+  }
+
+  render() {
+    return (
+      <>
+        <Header />
+        <HornsFilter handleChange={this.handleChange} />
+        {/* <p>{this.state.horns}</p> */}
+                      
+        <Main dataList={dataList} handleOpen={this.handleOpen} filterDataList={this.state.filterDataList} flag={this.state.flag}/> 
+
+       <SelectedBeast handleClose={this.handleClose} 
+                      showModal={this.state.showModal} 
+                      imageUrl={this.state.imageUrl} 
+                      title={this.state.title} 
+                      description={this.state.description} 
+                      keyword={this.state.keyword} 
+                      horns={this.state.horns} />
+        <Footer />
+      </>
+    )
+  }
+
+}
 export default App
 
 
