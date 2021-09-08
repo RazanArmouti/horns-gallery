@@ -45,6 +45,17 @@
 
 * Actual time needed to complete: 4:30
 
+## Feature 1. Filter by Numbers of Horns
+* Number and name of feature: Feature 1. Filter by Numbers of Horns
+
+* Estimate of time needed to complete: 4 hours
+
+* Start time: 2:00pm
+
+* Finish time: 9:35pm
+
+* Actual time needed to complete:7 hours
+
 
 
 # Getting Started with Create React App
