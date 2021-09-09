@@ -62,14 +62,14 @@ class App extends Component {
          
           return item;
         }
-        
+        else return false;
       }
     //  console.log(filterArr);
      console.log(this.state.filterDataList);
     })
    
     })
-    parseInt(value)==0?this.setState({flag:false}):this.setState({flag:true})
+    parseInt(value)===0?this.setState({flag:false}):this.setState({flag:true})
   }
 
   render() {
