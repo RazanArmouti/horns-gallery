@@ -9,7 +9,7 @@ class HornsFilter extends Component {
                 <FloatingLabel controlId="floatingSelect" label="Filter by Numbers of Horns">
                     <Form.Select  onChange={(event)=>{this.props.handleChange(event,event.target.value ); console.log(event.target.value)}}>
                   
-                        <option>Select Number</option>
+                        <option value="0">Select Number</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>

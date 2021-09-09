@@ -53,12 +53,13 @@ class App extends Component {
     this.setState({
       horns: value,
       flag:true,
+      
       filterDataList:dataList.filter(item => {
        
         for(let i=0; i<5;i++){
        
         if(parseInt(item.horns)===parseInt(value)){
-        
+         
           return item;
         }
         
@@ -68,7 +69,7 @@ class App extends Component {
     })
    
     })
-   
+    parseInt(value)==0?this.setState({flag:false}):this.setState({flag:true})
   }
 
   render() {
