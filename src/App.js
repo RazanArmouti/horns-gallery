@@ -64,8 +64,9 @@ class App extends Component {
         }
         else return false;
       }
+      return false;
     //  console.log(filterArr);
-     console.log(this.state.filterDataList);
+     //console.log(this.state.filterDataList);
     })
    
     })
